@@ -1,0 +1,111 @@
+.specialties {
+  background: var(--noir-950);
+}
+
+.specialties__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.specialties__card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.specialties__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+.specialties__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(190deg, rgba(36, 22, 17, 0.05) 30%, rgba(36, 22, 17, 0.88) 100%);
+}
+
+.specialties__label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--espresso-900);
+  background: var(--parchment-050);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.specialties__copy {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  color: var(--parchment-050);
+}
+
+.specialties__title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--parchment-050);
+}
+
+.specialties__text {
+  color: rgba(246, 239, 226, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.specialties__highlights {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.specialties__highlights-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage-300);
+}
+
+.specialties__highlights-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+}
+
+.specialties__highlights-list li {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--cream-text);
+  position: relative;
+  padding-left: 20px;
+}
+
+.specialties__highlights-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-500);
+}
+
+@media (min-width: 700px) {
+  .specialties__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,119 @@
+.featured {
+  background: var(--noir-950);
+}
+
+.featured__spotlight {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: var(--espresso-900);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  margin-bottom: 28px;
+}
+
+.featured__spotlight-media {
+  aspect-ratio: 16 / 10;
+}
+
+.featured__spotlight-body {
+  padding: clamp(24px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.featured__spotlight-name {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: var(--cream-text);
+}
+
+.featured__spotlight-desc {
+  color: var(--cream-muted);
+  font-size: 1rem;
+  max-width: 46ch;
+  line-height: 1.6;
+}
+
+.featured__spotlight-price {
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.featured__card {
+  background: var(--espresso-900);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.featured__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+.featured__card-media {
+  aspect-ratio: 4/3;
+}
+
+.featured__card-body {
+  padding: 22px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.featured__card-category {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage-300);
+}
+
+.featured__card-name {
+  font-size: 1.3rem;
+  color: var(--cream-text);
+}
+
+.featured__card-desc {
+  font-size: 0.9rem;
+  color: var(--cream-muted);
+  line-height: 1.5;
+}
+
+.featured__card-price {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--gold-300);
+}
+
+@media (min-width: 700px) {
+  .featured__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1023px) {
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .featured__spotlight {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
