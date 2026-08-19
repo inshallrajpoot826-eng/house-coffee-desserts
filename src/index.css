@@ -133,6 +133,7 @@ textarea:focus-visible {
 
 .section {
   padding: clamp(64px, 10vw, 120px) 0;
+  scroll-margin-top: 88px;
 }
 
 .eyebrow {
