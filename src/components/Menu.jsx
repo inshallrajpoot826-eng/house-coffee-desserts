@@ -18,15 +18,15 @@ const CATEGORY_DISPLAY_LABEL = {
 export default function Menu() {
   const [activeId, setActiveId] = useState(menuCategories[0].id)
   const activeCategory = menuCategories.find((c) => c.id === activeId)
-  const panelRef = useRef(null)
+  const sectionRef = useRef(null)
 
   function selectCategory(id) {
     setActiveId(id)
-    panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
-    <section id="menu" className="section menu">
+    <section id="menu" className="section menu" ref={sectionRef}>
       <div className="container">
         <div className="section-head-row">
           <div>
@@ -79,7 +79,7 @@ export default function Menu() {
           ))}
         </div>
 
-        <div className="menu__panel" role="tabpanel" ref={panelRef}>
+        <div className="menu__panel" role="tabpanel">
           {activeCategory.note && <p className="menu__note">{activeCategory.note}</p>}
           <ul className="menu__list">
             {activeCategory.items.map((item) => (
@@ -97,4 +97,3 @@ export default function Menu() {
     </section>
   )
 }
-
